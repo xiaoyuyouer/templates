@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="SingletonClassGenerate"
+    description="Creates a Singleton Class.">
+
+    <parameter
+        id="className"
+        name="Class Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Singleton" />
+
+    <parameter
+        id="singletonType"
+        name="Singleton Type"
+        type="enum"
+        default="Atomic"
+        help="Choose the Singleton type. Atomic or Normal style">
+        <option id="Atomic">Atomic type Singleton Class</option>
+        <option id="Normal">Normal type Singleton Class</option>
+    </parameter>
+
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>ic_atomic.png</thumb>
+        <!-- attributes act as selectors based on chosen parameters -->
+        <thumb singletonType="Atomic">ic_atomic.png</thumb>
+        <thumb singletonType="Normal">ic_normal.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
