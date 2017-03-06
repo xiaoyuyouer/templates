@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="Guide Activity"
+    minApi="9"
+    minBuildApi="14"
+    description="Creates a new guide activity">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="activityClass"
+        name="Activity Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${layoutToActivity(layoutName)}"
+        default="MainActivity"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityClass)}"
+        default="activity_main"
+        visibility="generateLayout"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="isLauncher"
+        name="Launcher Activity"
+        type="boolean"
+        default="false"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+
+    <parameter
+        id="backwardsCompatibility"
+        name="Backwards Compatibility (AppCompat)"
+        type="boolean"
+        default="true"
+        help="If false, this activity base class will be Activity instead of AppCompatActivity" />
+    
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+    
+    <parameter
+        id="counts"
+        name="guide icon counts"
+        type="string"
+        default="1" 
+        help="引导页的数量" />
+
+    <parameter
+        id="activeColor"
+        name="guide active color"
+        type="string"
+        default="#2196F3" 
+        help="选中页面小点颜色，rgb表示" />
+    
+    <parameter
+        id="inActiveColor"
+        name="guide inactive color"
+        type="string"
+        default="#FF4081" 
+        help="未选中页面小点颜色，rgb表示" />
+
+    <parameter
+        id="counts"
+        name="guide icon counts"
+        type="string"
+        default="1" 
+        help="引导页的数量" />
+
+    <parameter
+        id="icon1"
+        name="icon name 1"
+        type="string"
+        default="ic_icon" 
+        help="第一页图片名称，默认在drawable目录，不加后缀" />
+
+    <parameter
+        id="icon2"
+        name="icon name 2"
+        type="string"
+        default="ic_icon" 
+        help="第二页图片名称，默认在drawable目录，不加后缀" />
+
+    <parameter
+        id="icon3"
+        name="icon name 3"
+        type="string"
+        default="ic_icon" 
+        help="第三页图片名称，默认在drawable目录，不加后缀" />
+
+    <parameter
+        id="icon4"
+        name="icon name 4"
+        type="string"
+        default="ic_icon" 
+        help="第四页图片名称，默认在drawable目录，不加后缀" />
+
+    <parameter
+        id="icon5"
+        name="icon name 5"
+        type="string"
+        default="ic_icon" 
+        help="第五页图片名称，默认在drawable目录，不加后缀" />
+    
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>icon_guide.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
