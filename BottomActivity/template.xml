@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<template
+        format="5"
+        revision="5"
+        name="BottomActivity"
+        description="创建一个带底部tab的activity，在menu/navigation配置Tab的个数图标和文字"
+        minApi="9"
+        minBuildApi="9"
+        requireAppTheme="true"
+        category="Activity">
+
+    <dependency name="android-support-v4" revision="8"/>
+
+    <category value="Activity"/>
+    <formfactor value="Mobile"/>
+
+    <parameter
+            id="activityClass"
+            name="Activity Name"
+            type="string"
+            constraints="class|unique|nonempty"
+            default="MainActivity"
+            help="Acticity的名字"/>
+
+    <parameter
+            id="layoutName"
+            name="Layout Name"
+            type="string"
+            constraints="layout|unique|nonempty"
+            suggest="${activityToLayout(activityClass)}"
+            default="activity_main"
+            help="Activity对应layout的名子"/>
+
+    <parameter
+            id="activityTitle"
+            name="Title"
+            type="string"
+            constraints="nonempty"
+            default="MainActivity"
+            suggest="${activityClass}"
+            help="The name of the activity. For launcher activities, the application title."/>
+
+    <parameter
+            id="isLauncher"
+            name="Launcher Activity"
+            type="boolean"
+            default="false"
+            help="勾选是否作为默认启动的Activity" />
+
+    <parameter
+            id="parentActivityClass"
+            name="Hierarchical Parent"
+            type="string"
+            constraints="activity|exists|empty"
+            default=""
+            help="The hierarchical parent activity, used to provide a default implementation for the 'Up' button"/>
+
+    <parameter
+            id="packageName"
+            name="Package name"
+            type="string"
+            constraints="package"
+            default="com.mycompany.myapp"/>
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>bottom.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl"/>
+    <execute file="recipe.xml.ftl"/>
+
+</template>

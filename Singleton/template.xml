@@ -17,7 +17,7 @@
         name="Singleton Type"
         type="enum"
         default="Atomic"
-        help="Choose the Singleton type. Atomic or Normal style">
+        help="选择一个生成单例的类型，原子类型或者是正常类型">
         <option id="Atomic">Atomic type Singleton Class</option>
         <option id="Normal">Normal type Singleton Class</option>
     </parameter>
