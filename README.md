@@ -8,3 +8,4 @@
 4. RecyclerViewAdapterWithActivity 自带recycleView和adapter与viewHolder的activity
 5. GuideActivity 引导页，可配置view数量，图标，指示器小点颜色等
 6. BottomActivity 包含底部tab的activity页面
+7. AboutActivity 关于页面，也可以当个人资料详情页
